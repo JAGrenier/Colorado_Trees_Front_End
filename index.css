@@ -1,0 +1,82 @@
+
+body, html {
+    height: 100%;
+}
+/* .navbar {
+    overflow: hidden;
+    background-color: #333;
+    position: fixed; 
+    top: 0; 
+    width: 100%; 
+    z-index: 2;
+}
+
+  /* Links inside the navbar */
+/* .navbar a {
+    float: right;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+} */
+
+  /* Change background on mouse-over */
+/* .navbar a:hover {
+    background: #ddd;
+    color: black; */
+/* } */ 
+/* The hero image */
+.hero-image {
+  /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)), url("https://images.unsplash.com/photo-1546045446-11487cd6da07?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80");
+
+  /* Set a specific height */
+    height: 75%;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+/* Place text in the middle of the image */
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #7EBD91;
+}
+
+.column {
+    margin-top: 25px;;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    float: left;
+    width: 33.33%;
+
+}
+
+  /* Clear floats after the columns */
+/* .row:after {
+    content: "sgfd";
+    display: table;
+    clear: both;
+} */
+
+@media screen and (max-width: 600px) {
+    .column {
+        width: 100%;
+    }
+}
+
+footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #4F9D66;
+    
+}

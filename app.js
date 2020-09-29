@@ -12,11 +12,10 @@ function showTreeCards (tree){
     let card = document.createElement('div')
     card.classList = ('card')
     card.innerHTML = `
-                
+            <h5 class="card-title">${tree.name}</h5>
+                <h6 class="card-sciname">${tree.scientific_name}</h6>
                     <img src="${tree.image}"  alt="Tree Picture" style="width:100%"></img>
                     <div class="card-body">
-                        <h5 class="card-title">${tree.name}</h5>
-                        <h6 class="card-sciname">${tree.scientific_name}</h6>
                         <p class="card-information"><strong>Bark: </strong> ${tree.bark} 
                         <br> <strong>Leaves: </strong> ${tree.leaves} 
                         <br> <strong>Fruit:</strong> ${tree.fruit}
