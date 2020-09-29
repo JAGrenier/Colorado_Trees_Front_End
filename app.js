@@ -1,5 +1,4 @@
-
-const treeCardContainer = document.querySelector('#tree-cards-container')
+const treeCardContainer = document.querySelector('.card-container')
 
 fetch('http://localhost:3000/trees')
     .then(response => response.json())
@@ -8,42 +7,55 @@ fetch('http://localhost:3000/trees')
 function showTrees (trees){
     trees.forEach(showTreeCards)
 }
-
+//   
 function showTreeCards (tree){
     let card = document.createElement('div')
+    card.classList = ('card')
     card.innerHTML = `
-    <div class = "container">
-    <div class="row row-cols-1 row-cols-md-2">
-    <div class="card mb-4">
-        <div class="row no-gutters">
-            <div class="col-md-4">
-            <img src="${tree.image}" class="card-img" alt="Tree Picture">
-            </div>
-            <div class="col-md-8">
-            <div class="card-body">
-                <h3 class="card-title">${tree.name}</h>
-                <h6 class="card-sciname">${tree.scientific_name}</h6>
-                <p class="card-information"><strong>Bark: </strong> ${tree.bark} 
-                <br> <strong>Leaves: </strong> ${tree.leaves} 
-                <br> <strong>Fruit:</strong> ${tree.fruit}
-                <br> <strong>Elevation: </strong> ${tree.elevation_max}ft to ${tree.elevation_min}ft
-                <br> <strong>Height: </strong> ${tree.height_max}ft to ${tree.height_min}ft
-                <br> <strong>Tree Trivia: </strong> ${tree.fun_fact}</p>
-            </div>
-            </div>
-        </div>
-        </div>
-    </div>
-    </div>`
+                
+                    <img src="${tree.image}"  alt="Tree Picture" style="width:100%"></img>
+                    <div class="card-body">
+                        <h5 class="card-title">${tree.name}</h5>
+                        <h6 class="card-sciname">${tree.scientific_name}</h6>
+                        <p class="card-information"><strong>Bark: </strong> ${tree.bark} 
+                        <br> <strong>Leaves: </strong> ${tree.leaves} 
+                        <br> <strong>Fruit:</strong> ${tree.fruit}
+                        <br> <strong>Elevation: </strong> ${tree.elevation_max}ft to ${tree.elevation_min}ft
+                        <br> <strong>Height: </strong> ${tree.height_max}ft to ${tree.height_min}ft
+                        <br> <strong>Tree Trivia: </strong> ${tree.fun_fact}</p>
+                    </div>
+                `
 
     treeCardContainer.append(card)
 
-
-
+}
+//   <div class = "container">
+//     <div class="row row-cols-1 row-cols-md-2">
+//     <div class="card mb-4">
+//         <div class="row no-gutters">
+//             <div class="col-md-4">
+//             <img src="${tree.image}" class="card-img" alt="Tree Picture">
+//             </div>
+//             <div class="col-md-8">
+// //             <div class="card-body">
+//                 <h3 class="card-title">${tree.name}</h>
+//                 <h6 class="card-sciname">${tree.scientific_name}</h6>
+//                 <p class="card-information"><strong>Bark: </strong> ${tree.bark} 
+//                 <br> <strong>Leaves: </strong> ${tree.leaves} 
+//                 <br> <strong>Fruit:</strong> ${tree.fruit}
+//                 <br> <strong>Elevation: </strong> ${tree.elevation_max}ft to ${tree.elevation_min}ft
+//                 <br> <strong>Height: </strong> ${tree.height_max}ft to ${tree.height_min}ft
+//                 <br> <strong>Tree Trivia: </strong> ${tree.fun_fact}</p>
+// //             </div>
+// //             </div>
+// //         </div>
+// //         </div>
+// //     </div>
+//     </div>`
     // console.log(tree)
     // const treeCard = document.createElement('div')
     // treeCard.classList = ('tree-card')
-    
+
     // const name = document.createElement('h2')
     // name.textContent = tree.name 
 
@@ -59,7 +71,7 @@ function showTreeCards (tree){
     // const fruit = document.createElement('p')
     // fruit.textContent = `Fruit: ${tree.fruit}`
 
-    
+
     // const elevation = document.createElement('p')
     // elevation.textContent = `Elevation: ${tree.elevation_max} to ${tree.elevation_min}`
 
@@ -69,11 +81,10 @@ function showTreeCards (tree){
     // const treeFact = document.createElement('p')
     // treeFact.textContent = `Fun Fact: ${tree.fun_fact}`
 
-    // const treePic = document.createElement('img')
+    // const treePic = document.createElement('img')c
     // treePic.src = tree.image
 
     // treeCard.append(name, scientific_name, bark, leaves, fruit, elevation, height, treeFact, treePic)
     // treeCardContainer.append(treeCard)
     // // const imageCol = document.querySelector(".card-img")
     // // imageCol.src = tree.image
-}
