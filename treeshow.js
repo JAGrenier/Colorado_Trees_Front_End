@@ -6,8 +6,8 @@ const treeCardContainer = document.querySelector('.card-container')
 const loginForm = document.querySelector('.login-form')
 const getUsers = document.querySelector('.get-users')
 
-loginForm.addEventListener('submit', loginUser)
-getUsers.addEventListener('click', retrieveUsers)
+// loginForm.addEventListener('submit', loginUser)
+// getUsers.addEventListener('click', retrieveUsers)
 
 function loginUser(event){
     event.preventDefault()

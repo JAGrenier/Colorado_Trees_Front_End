@@ -14,7 +14,7 @@ header{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    background-color: #54595Dff;
+    background-color: #54595DFF;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -44,11 +44,12 @@ header{
 
 .hero-image {
     background-image: url(/images/hero.jpg);
-    height: 55%;
+    height: 50%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
+    z
 }
 
 #hero-text-box{
