@@ -1,12 +1,12 @@
-.color-primary-0 { color: #2A7E43 }	
-.color-primary-1 { color: #7EBD91 }
-.color-primary-2 { color: #4F9D66 }
-.color-primary-3 { color: #105E27 }
-.color-primary-4 { color: #003F13 }
+.color-primary-0 { color: #586724ff }	
+.color-primary-1 { color: #3E8DD3ff }
+.color-primary-2 { color: #54595Dff }
+.color-primary-3 { color: #B38245ff }
+.color-primary-4 { color: #E4ECEFff }
 
 
 body {
-    color: #003F13;
+    color: #54595Dff;
 
 }
 
@@ -20,7 +20,7 @@ body {
     transition: 0.1s;
 }
 .card:hover {
-    box-shadow: 0 8px 16px 0 #4F9D66;
+    box-shadow: 0 8px 16px 0 #3E8DD3ff;
   }
 
 .card-container {

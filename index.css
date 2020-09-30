@@ -1,52 +1,75 @@
 
+.color-primary-0 { color: #586724ff }	
+.color-primary-1 { color: #3E8DD3ff }
+.color-primary-2 { color: #54595Dff }
+.color-primary-3 { color: #B38245ff }
+.color-primary-4 { color: #E4ECEFff }
+
 body, html {
     height: 100%;
-}
-/* .navbar {
-    overflow: hidden;
-    background-color: #333;
-    position: fixed; 
-    top: 0; 
-    width: 100%; 
-    z-index: 2;
+    font-family: 'Catamaran', sans-serif;
 }
 
-  /* Links inside the navbar */
-/* .navbar a {
-    float: right;
-    display: block;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-} */
+header{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: #54595Dff;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 30px 10%;
+}
 
-  /* Change background on mouse-over */
-/* .navbar a:hover {
-    background: #ddd;
-    color: black; */
-/* } */ 
-/* The hero image */
+.logo {
+    margin-right: auto;
+}
+
+.nav-links{
+    list-style: none;
+}
+.nav-links a{
+    color: #E4ECEFff;
+}
+.nav-links li{
+    display: inline-block;
+    padding: 0px 20px;
+}
+.nav-links li a {
+    transition: all 0.3s ease 0s;
+}
+.nav-links li a:hover {
+    color: #3E8DD3ff;
+}
+
 .hero-image {
-  /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)), url("https://images.unsplash.com/photo-1546045446-11487cd6da07?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80");
-
-  /* Set a specific height */
-    height: 75%;
-
+    background-image: url(/images/hero.jpg);
+    height: 55%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
 }
 
-/* Place text in the middle of the image */
+#hero-text-box{
+    /* margin-top:50px;
+    background-color: 
+    position: absolute;
+    width: 35%;
+    height: 35%;
+    opacity: 0.8;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    border-radius: 2px; */
+}
 .hero-text {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: #7EBD91;
+    color: #E4ECEFff;
 }
 
 .column {
@@ -77,6 +100,7 @@ footer {
         left: 0;
         bottom: 0;
         width: 100%;
-        background-color: #4F9D66;
+        background-color: #54595Dff;
     
 }
+
