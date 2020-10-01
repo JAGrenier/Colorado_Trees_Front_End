@@ -9,6 +9,8 @@ const getUsers = document.querySelector('.get-users')
 const createUserForm = document.querySelector('.create-user')
 
 
+
+
 loginForm.addEventListener('submit', loginUser)
 createUserForm.addEventListener('submit', createNewUser)
 
@@ -23,12 +25,13 @@ function createNewUser(event){
     fetch(usersURL, {
         method: "POST",
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${localStorage.getItem('token')}`
         },
         body: JSON.stringify({user: newUser})
     })
-        .then(hanldeResponseErrors)
-        .then(result => console.log(result))
+        .then(handleResponseErrors)
+        .then(result => console.log('new user', result))
         .catch(error => {
             console.error(error)
             const errorMessage = document.createElement('p')
@@ -40,8 +43,8 @@ function createNewUser(event){
         createUserForm.reset()   
 }
 
-function hanldeResponseErrors(response){
-    console.log(response)
+function handleResponseErrors(response){
+    console.log('response', response)
     if (response.ok){
     return response.json()
     }else {
@@ -52,7 +55,7 @@ function hanldeResponseErrors(response){
 function handleFav (event){
     const tree_id = event.target.dataset.treeId
     const user_id = localStorage.getItem('user_id')
-    console.log(event.target.dataset.treeId)
+
     fetch(joinURL, {
         method: 'POST',
         headers: {
@@ -62,7 +65,7 @@ function handleFav (event){
         body: JSON.stringify({user_id, tree_id})
     })
     .then(response => response.json())
-    .then(console.log("yay"))
+    .then(result => console.log('fav result', result))
 
 }
 
@@ -80,26 +83,21 @@ function loginUser(event){
     })
     .then(response => response.json())
     .then(result => {
-        // console.log(user.user.id)
         localStorage.setItem('token', result.token)
         localStorage.setItem('user_id', result.user.id)
     })
 
     loginForm.reset()
 
-    callTrees()
+    callTrees(event, username)
 }
 
-function callTrees(){
+function callTrees(event, username){
 fetch('http://localhost:3000/trees')
     .then(response => response.json())
-    .then(showTrees)
-}
-function showTrees (trees){
-    trees.forEach(showTreeCards)
-}
+    .then(trees => {
+        trees.forEach(tree => {
 
-function showTreeCards (tree){
     let card = document.createElement('div')
     card.classList = ('card')
     card.innerHTML = `
@@ -117,18 +115,28 @@ function showTreeCards (tree){
                         <br> <label for="comment">Comment:</label>
                         <br> <textarea name="comment" rows="10" cols="25">Add your comments on this tree here.</textarea>
                         </div>`
-
     const favButton = document.createElement('button')
-    favButton.textContent = "⭐"
-    favButton.classList = ('fav-button')
-    favButton.dataset.treeID === tree.id
+    favButton.textContent = "⭐"  
+    
+    const previouslyLiked = tree.users.find(user => user.id === parseInt(localStorage.user_id))      
+    
+    if(previouslyLiked){
+        console.log(previouslyLiked)
+        favButton.classList.add('active-favorite')
+    } else {
+        favButton.classList.add('fav-button')
+    } 
+
+    favButton.dataset.treeId = tree.id
 
     card.append(favButton)
     treeCardContainer.append(card)
-
+    
     favButton.addEventListener('click', (event) =>{ 
         favButton.classList.toggle("activeFavorite")
         handleFav(event)
     })
-}
 
+})
+    })
+}
