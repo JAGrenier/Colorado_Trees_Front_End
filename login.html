@@ -7,7 +7,7 @@
     <script src="login.js" defer ></script>
     <title>Login Page</title>
 </head>
-<body>
+<body> 
     <header> 
 
         <img class="logo" src="https://img.icons8.com/ios/50/000000/forest.png" alt="logo">
@@ -29,15 +29,16 @@
         <label for="password">Password:</label>
         <input type="password" name="password" id="password">
         <input type="submit" value="Login">
+        <p class="login-error-message hidden">error goes here</p>
     </form>
     <form class ='create-user'>
         <h3>New Users</h3>
         <label for="username2">Username:</label>
-        <input type="text" name="username" id="username2" required>
+        <input type="text" name="username" id="username2" >
         <label for="password2">Password:</label>
-        <input type="password" name="password" id="password2" required>
+        <input type="password" name="password" id="password2" >
         <input type="submit" value="Create User">
-        <!-- <p class="error-message hidden">error goes here</p> -->
+        <p class="create-error-message hidden">error goes here</p>
     </form>
     <div class="card-container">
     </div>

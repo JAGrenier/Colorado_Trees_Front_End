@@ -30,26 +30,44 @@ function createNewUser(event){
         },
         body: JSON.stringify({user: newUser})
     })
-        .then(handleResponseErrors)
-        .then(result => console.log('new user', result))
-        .catch(error => {
-            console.error(error)
-            const errorMessage = document.createElement('p')
-            errorMessage.textContent = error
-            createUserForm.append(errorMessage)
-            
+        .then(response => response.json())
+        .then(user => {
+            console.log('user', user)
+            if (user.errors){
+                throw new Error(user.errors[0])
+            }
+                //if redirecting 
+            localStorage.setItem('token', user.token)
+            window.location.href = '/usertrees.html'
+
+            // if not redirecting 
+
+            // console.log('Success!')
+            // const errorMessage = createUserForm.querySelector(".create-error-message")
+            // errorMessage.textContent = 'New user created, now login!'
+            // errorMessage.classList.remove('hidden')
+            // errorMessage.classList.add('success')
+
         })
-        
+        .catch(handleError)
+    
         createUserForm.reset()   
 }
 
-function handleResponseErrors(response){
-    console.log('response', response)
-    if (response.ok){
-    return response.json()
-    }else {
-        throw new Error("error detected")
-    }
+// function handleResponseErrors(response){
+//     console.log('response', response)
+//     if (response.ok){
+//     return response.json()
+//     } else {
+//         throw new Error("error detected")
+//     }
+// }
+
+function handleError(error){
+    console.error(error)
+    const errorMessage = createUserForm.querySelector(".create-error-message")
+    errorMessage.textContent = error.message
+    errorMessage.classList.remove('hidden')
 }
 
 function handleFav (event){
@@ -83,6 +101,9 @@ function loginUser(event){
     })
     .then(response => response.json())
     .then(result => {
+        console.log('user', result) 
+        // window.location.href = '/usertrees.html'
+
         localStorage.setItem('token', result.token)
         localStorage.setItem('user_id', result.user.id)
     })
