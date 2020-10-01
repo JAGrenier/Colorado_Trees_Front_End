@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="login.css">
-    <script src="login.js"defer ></script>
+    <script src="login.js" defer ></script>
     <title>Login Page</title>
 </head>
 <body>
@@ -20,15 +20,25 @@
             </ul>
         </nav>
     </header>
-    <h1>Login</h1>
-        <form class="login-form">
+    <h1>View Your Trees</h1>
+    <p>To see your favorite trees please login or create an account</p>
+    <form class="login-form">
+        <h3>Existing Users</h3>
         <label for="username">Username:</label>
         <input type="text" name="username" id="username">
         <label for="password">Password:</label>
         <input type="password" name="password" id="password">
-        <input type="submit" value="login">
+        <input type="submit" value="Login">
     </form>
-    <button class='get-users'>Get Users</button>
+    <form class ='create-user'>
+        <h3>New Users</h3>
+        <label for="username2">Username:</label>
+        <input type="text" name="username" id="username2">
+        <label for="password2">Password:</label>
+        <input type="password" name="password" id="password2">
+        <input type="submit" value="Create User">
+        <!-- <p class="error-message hidden">error goes here</p> -->
+    </form>
     <div class="card-container">
     </div>
 </body>

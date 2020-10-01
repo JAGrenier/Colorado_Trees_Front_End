@@ -48,6 +48,14 @@ header{
     box-shadow: 0 4px 8px 0 black;
     transition: 0.1s;
 }
+
+.card img {
+    max-width: 80%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
 .card:hover {
     box-shadow: 0 8px 16px 0 #3E8DD3ff;
 }

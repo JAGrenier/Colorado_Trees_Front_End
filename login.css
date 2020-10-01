@@ -54,3 +54,11 @@ header{
     justify-content: center;
     padding: 2px 16px;
 }
+
+form {
+    margin: 1%;
+    padding: 1%;
+}
+.activeFavorite {
+    background-color: #586724ff;
+}
