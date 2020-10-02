@@ -43,7 +43,7 @@ header{
 }
 
 .logo a:hover{
-    color: #CFDFEBff;
+    color: #fff;
 }
 nav{
     float: right;
@@ -52,12 +52,12 @@ nav{
 
 nav a{
     text-decoration: none;
-    font-size: 20px;
+    font-size: 90%;
     margin: 0 10px;
     color: black;
 }
 nav a:hover{
-    color: #CFDFEBff;
+    color: #fff;
 }
 .banner-area{
     width: 100%;
@@ -70,7 +70,7 @@ nav a:hover{
 }
 .banner-area h2{
     padding: 8%;
-    font-size: 70px;
+    font-size: 400%;
     font-family: 'Vollkorn', serif;
     color: #fff;
 
@@ -86,7 +86,7 @@ nav a:hover{
 .content-area h2{
     letter-spacing: 4px;
     padding-top: 30px;
-    font-size: 40px;
+    font-size: 125%;
     margin: 0;
 }
 .content-area p{
@@ -98,7 +98,6 @@ nav a:hover{
     /* display: flex;
     flex-wrap: wrap;
     justify-content: center; */
-    
     float: left;
     width: 33.33%;
     background-color: #fff;

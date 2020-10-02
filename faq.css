@@ -1,36 +1,115 @@
-body, html {
-    height: 100%;
-    font-family: 'Catamaran', sans-serif;
-}
-
-header{
-    box-sizing: border-box;
-    margin: 0;
+* {
+    margin: 0; 
     padding: 0;
-    background-color: #54595DFF;
-    display: flex;
-    justify-content: flex-end;
+    font-family: 'Montserrat', sans-serif;
+}
+section {
+    padding-top: 15%;
+}
+body{
+    text-align: center;
     align-items: center;
-    padding: 30px 10%;
+}
+.wrapper{
+    width: 100%;
+    margin: 0 auto;
+}
+header{
+    height: 100px;
+    background: #2055A4a3;
+    width: 100%;
+    z-index: 12;
+    position: fixed;
 }
 
 .logo {
-    margin-right: auto;
+    width: 30%;
+    float: left;
+    line-height: 100px;
 }
 
-.nav-links{
-    list-style: none;
+.logo a{
+    text-decoration: none;
+    font-size: 30px;
+    color: black;
+    letter-spacing: 2px;
+    font-family: 'Vollkorn', serif;
 }
-.nav-links a{
-    color: #E4ECEFff;
+
+.logo a:hover{
+    color: #fff;
 }
-.nav-links li{
-    display: inline-block;
-    padding: 0px 20px;
+nav{
+    float: right;
+    line-height: 100px;
 }
-.nav-links li a {
-    transition: all 0.3s ease 0s;
+
+nav a{
+    text-decoration: none;
+    font-size: 90%;
+    margin: 0 10px;
+    color: black;
 }
-.nav-links li a:hover {
-    color: #3E8DD3ff;
+nav a:hover{
+    color: #CFDFEBff;
+}
+.faq{
+    text-align: center;
+}
+.accordion {
+    max-width: 400px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    overflow: hidden;
+    background: #3E8DD3ff;
+}
+
+.accordion__label,
+.accordion__content {
+    padding: 14px 20px;
+}
+
+.accordion__label {
+    display: block;
+    color: #ffffff;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+    transition: background 0.1s;
+}
+
+.accordion__label:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.accordion__label::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
+    width: 12px;
+    height: 6px;
+    background-image: url('data:image/svg+xml;utf8,<svg width="100" height="50" xmlns="http://www.w3.org/2000/svg"><polygon points="0,0 100,0 50,50" style="fill:%23FFFFFF99;" /></svg>');
+    background-size: contain;
+    transition: transform 0.4s;
+}
+
+.accordion__content {
+    background: #ffffff;
+    line-height: 1.6;
+    font-size: 0.85em;
+    display: none;
+}
+
+.accordion__input {
+    display: none;
+}
+
+.accordion__input:checked ~ .accordion__content {
+    display: block;
+}
+
+.accordion__input:checked ~ .accordion__label::after {
+    transform: translateY(-50%) rotate(0.5turn);
 }
